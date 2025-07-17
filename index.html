@@ -1,73 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-
-    <title>Budget App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Budget Tracker</h1>
-        <div class="budget__numbers">
-            <div id="earned" class="number">
-                <small>Money Earned</small>
-                <div class="amount__container">
-                    <p id="earned__symbol">Rs.</p>
-                    <span id="amount__earned"></span>
-                </div>
-            </div>
-            <div id="available" class="number">
-                <small>Money Available</small>
-                <div class="amount__container">
-                    <p>Rs.</p>
-                    <span id="amount__available"></span>
-                </div>
-            </div>
-            <div id="spent" class="number">
-                <small>Money Spent</small>
-                <div class="amount__container">
-                    <p id="spent__symbol">Rs.</p>
-                    <span id="amount__spent"></span>
-                </div>
-            </div>
-        </div>
-        <div class="input__area">
-            <input type="text" id="description" placeholder="Description">
-            <input type="number" id="amount" placeholder="Amount">
-        </div>
-        <div class="buttons__area">
-            <button id="add__income">Add Income</button>
-            <button id="add__expense">Add Expense</button>
-        </div>
-        <div class="items__container">
-            <div id="income__container" class="container">
-                <h2>Income</h2>
-                <!-- <div class="item income">
-                    <h4>Stuff sold</h4>
-                    <div class="item__income">
-                        <p class="symbol">$</p>
-                        <span class="income__amount">200</span>
-                    </div>
-                    <i class="far fa-trash-alt"></i>
-                </div> -->
-            </div>
-            <div id="expenses__container" class="container">
-                <h2>Expenses</h2>
-                <!-- <div class="item expense">
-                    <h4>Stuff bought</h4>
-                    <div class="item__expense">
-                        <p class="symbol">$</p>
-                        <span class="expense__amount">200</span>
-                    </div>
-                    <i class="far fa-trash-alt"></i>
-                </div> -->
-            </div>
-        </div>
+  <div class="container">
+    <h1>Budget Tracker</h1>
+
+    <div class="summary">
+      <div class="card earned">
+        <h4>Money Earned</h4>
+        <p id="amount__earned">₹0.00</p>
+      </div>
+      <div class="card available">
+        <h4>Money Available</h4>
+        <p id="amount__available">₹0.00</p>
+      </div>
+      <div class="card spent">
+        <h4>Money Spent</h4>
+        <p id="amount__spent">₹0.00</p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="form">
+      <input type="text" id="description" placeholder="Description"/>
+      <select id="category">
+  <option value="" disabled selected>Select Category</option>
+  <option value="Food">Food</option>
+  <option value="Travel">Travel</option>
+  <option value="Bills">Bills</option>
+  <option value="Entertainment">Entertainment</option>
+  <option value="Salary">Salary</option>
+  <option value="Others">Others</option>
+</select>
+
+      <input type="number" id="amount" placeholder="Amount"/>
+      
+
+      <div class="buttons">
+        <button id="add__income" class="btn income">Add Income</button>
+        <button id="add__expense" class="btn expense">Add Expense</button>
+      </div>
+    </div>
+
+    <div class="list-section">
+      <div>
+        <h3>Income</h3>
+        <ul id="income__container"></ul>
+      </div>
+      <div>
+        <h3>Expenses</h3>
+        <ul id="expenses__container"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
